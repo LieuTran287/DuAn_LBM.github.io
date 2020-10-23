@@ -21,3 +21,17 @@ E:\C#\DuAn_LMB_NhanSu\DuAn_LMB_NhanSu\obj\Debug\DuAn_LMB_NhanSu.pdb
 E:\C#\DuAn_LMB_NhanSu\DuAn_LMB_NhanSu\obj\Debug\DuAn_LMB_NhanSu.QuanLy.resources
 E:\C#\DuAn_LMB_NhanSu\DuAn_LMB_NhanSu\obj\Debug\DuAn_LMB_NhanSu.US_Control.CT_ChiNhanh.resources
 E:\C#\DuAn_LMB_NhanSu\DuAn_LMB_NhanSu\obj\Debug\DuAn_LMB_NhanSu.US_Control.CT_PhongBan.resources
+E:\C#\DuAn_LBM.github.io\DuAn_LMB_NhanSu\bin\Debug\DuAn_LMB_NhanSu.exe.config
+E:\C#\DuAn_LBM.github.io\DuAn_LMB_NhanSu\bin\Debug\DuAn_LMB_NhanSu.exe
+E:\C#\DuAn_LBM.github.io\DuAn_LMB_NhanSu\bin\Debug\DuAn_LMB_NhanSu.pdb
+E:\C#\DuAn_LBM.github.io\DuAn_LMB_NhanSu\obj\Debug\DuAn_LMB_NhanSu.csprojAssemblyReference.cache
+E:\C#\DuAn_LBM.github.io\DuAn_LMB_NhanSu\obj\Debug\DuAn_LMB_NhanSu.Form1.resources
+E:\C#\DuAn_LBM.github.io\DuAn_LMB_NhanSu\obj\Debug\DuAn_LMB_NhanSu.Properties.Resources.resources
+E:\C#\DuAn_LBM.github.io\DuAn_LMB_NhanSu\obj\Debug\DuAn_LMB_NhanSu.QuanLy.resources
+E:\C#\DuAn_LBM.github.io\DuAn_LMB_NhanSu\obj\Debug\DuAn_LMB_NhanSu.US_Control.CT_ChiNhanh.resources
+E:\C#\DuAn_LBM.github.io\DuAn_LMB_NhanSu\obj\Debug\DuAn_LMB_NhanSu.US_Control.CT_PhongBan.resources
+E:\C#\DuAn_LBM.github.io\DuAn_LMB_NhanSu\obj\Debug\DuAn_LMB_NhanSu.csproj.GenerateResource.cache
+E:\C#\DuAn_LBM.github.io\DuAn_LMB_NhanSu\obj\Debug\DuAn_LMB_NhanSu.csproj.CoreCompileInputs.cache
+E:\C#\DuAn_LBM.github.io\DuAn_LMB_NhanSu\obj\Debug\DuAn_LMB_NhanSu.exe
+E:\C#\DuAn_LBM.github.io\DuAn_LMB_NhanSu\obj\Debug\DuAn_LMB_NhanSu.pdb
+E:\C#\DuAn_LBM.github.io\DuAn_LMB_NhanSu\obj\Debug\DuAn_LMB_NhanSu.US_Control.CT_NhanVien.resources

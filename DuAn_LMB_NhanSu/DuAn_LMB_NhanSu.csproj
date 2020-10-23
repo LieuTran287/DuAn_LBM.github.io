@@ -67,6 +67,12 @@
     <Compile Include="US_Control\CT_ChiNhanh.Designer.cs">
       <DependentUpon>CT_ChiNhanh.cs</DependentUpon>
     </Compile>
+    <Compile Include="US_Control\CT_NhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="US_Control\CT_NhanVien.Designer.cs">
+      <DependentUpon>CT_NhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="US_Control\CT_PhongBan.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="US_Control\CT_ChiNhanh.resx">
       <DependentUpon>CT_ChiNhanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="US_Control\CT_NhanVien.resx">
+      <DependentUpon>CT_NhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="US_Control\CT_PhongBan.resx">
       <DependentUpon>CT_PhongBan.cs</DependentUpon>

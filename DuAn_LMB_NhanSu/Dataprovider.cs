@@ -11,8 +11,13 @@ namespace DuAn_LMB_NhanSu
 {
     class Dataprovider
     {
+        #region ------------------------Khai báo biến-----------------------------------
         public static SqlConnection conn = null;
         public static DataTable dt;
+        private static SqlCommand cm;
+        private static SqlDataAdapter da;
+        #endregion
+        #region ------------------------Connect Database------------------------------
         public static SqlConnection ketnoidulieu()
         {
             try
@@ -34,9 +39,10 @@ namespace DuAn_LMB_NhanSu
                 return null;
             }
         }
+        #endregion
 
-        #region
-        ///Đăng nhập
+
+        #region -----------------Đăng nhập---------------------
         public static DataTable dangnhap(string tk, string mk)
         {
             conn = ketnoidulieu();
@@ -67,21 +73,6 @@ namespace DuAn_LMB_NhanSu
             da.Fill(dt);
             return dt;
         }
-        #endregion
-        public static DataTable getDatatTable(string sql)
-        {
-            //dt.Clear();
-            dt = new DataTable();
-            conn = ketnoidulieu();
-            if (conn.State == ConnectionState.Open)
-                conn.Close();
-            conn.Open();
-            SqlCommand cm = new SqlCommand(sql, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cm);
-            da.Fill(dt);
-            return dt;
-        }
-
         public SqlDataReader ThemChiNhanh(string machinhanh, string tenchinhanh, string cap, string diachi, string sdt, string nhomme)
         {
             if (conn.State == ConnectionState.Open)
@@ -99,5 +90,42 @@ namespace DuAn_LMB_NhanSu
             dr = cm.ExecuteReader();
             return dr;
         }
+        #endregion
+
+        #region -----------------Hàm xử lý dữ liệu ------------------------------
+        // Hàm lấy dữ liệu theo câu truy vấn
+        public static DataTable getDatatTable(string sql)
+        {
+            //dt.Clear();
+            dt = new DataTable();
+            conn = ketnoidulieu();
+            if (conn.State == ConnectionState.Open)
+                conn.Close();
+            conn.Open();
+            cm = new SqlCommand(sql, conn);
+            da = new SqlDataAdapter(cm);
+            da.Fill(dt);
+            return dt;
+        }
+        // Hàm thêm - cập nhật dữ liệu
+        public static int Update(DataTable table)
+        {
+            try
+            {
+                conn = ketnoidulieu();
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+                conn.Open();
+                SqlCommandBuilder builder = new SqlCommandBuilder(da);
+                da.Update(table);
+                conn.Close();
+                return 1;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        #endregion
     }
 }

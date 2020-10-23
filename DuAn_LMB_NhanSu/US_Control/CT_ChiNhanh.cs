@@ -15,7 +15,6 @@ namespace DuAn_LMB_NhanSu.US_Control
     {
         DataTable dt_chinhanh = new DataTable();
         Dataprovider data = new Dataprovider();
-        SqlDataReader dr;
 
         private DataGridViewRow drv_chinhanh = new DataGridViewRow();
         public DataGridViewRow DRV_CHINHANH
@@ -57,9 +56,20 @@ namespace DuAn_LMB_NhanSu.US_Control
             {
                 if (!string.IsNullOrEmpty(txtTenChiNhanh.Text))
                 {
-                    dr = data.ThemChiNhanh(txtMaChiNhanh.Text, txtTenChiNhanh.Text, cboCapCN.Text, txtDiaChi.Text, txtSoDienThoai.Text, txtNhomMe.Text);
-                    label10.Text = "Thêm vào thành công!";
-                    load();
+                    DataRow dr_chinhanh = dt_chinhanh.NewRow();
+                    dr_chinhanh["Ma_ChiNhanh"] = txtMaChiNhanh.Text.Trim();
+                    dr_chinhanh["Ten_ChiNhanh"] = txtTenChiNhanh.Text.Trim();
+                    dr_chinhanh["DiaChi"] = txtDiaChi.Text;
+                    dr_chinhanh["DienThoai"] = txtSoDienThoai.Text;
+                    dr_chinhanh["Cap"] = cboCapCN.SelectedItem.ToString();
+                    dr_chinhanh["NhomMe"] = txtNhomMe.Text;
+                    dt_chinhanh.Rows.Add(dr_chinhanh);
+                    int them = Dataprovider.Update(dt_chinhanh);
+                    if(them == 1)
+                    {
+                        MessageBox.Show("Đã thêm dữ liệu!");
+                        load();
+                    }
                 }
                 else
                 {
@@ -80,6 +90,12 @@ namespace DuAn_LMB_NhanSu.US_Control
         private void Luoi_ChiNhanh_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             drv_chinhanh = Luoi_ChiNhanh.Rows[e.RowIndex];
+            txtMaChiNhanh.Text = drv_chinhanh.Cells[0].Value.ToString();
+            txtTenChiNhanh.Text = drv_chinhanh.Cells[1].Value.ToString();
+            cboCapCN.Text = drv_chinhanh.Cells[4].Value.ToString();
+            txtDiaChi.Text = drv_chinhanh.Cells[2].Value.ToString();
+            txtSoDienThoai.Text = drv_chinhanh.Cells[3].Value.ToString();
+            txtNhomMe.Text = drv_chinhanh.Cells[5].Value.ToString();
         }
     }
 }

@@ -14,6 +14,7 @@ namespace DuAn_LMB_NhanSu.US_Control
     {
         public delegate DataGridViewRow drvChiNhanh();
         public drvChiNhanh getChinhanh;
+        DataTable dt_phongban = new DataTable();
         public CT_PhongBan()
         {
             InitializeComponent();
@@ -23,6 +24,11 @@ namespace DuAn_LMB_NhanSu.US_Control
         {
             DataGridViewRow drv_chinhanh = getChinhanh();
             lbmachinhanh.Text = drv_chinhanh.Cells[0].Value.ToString();
+        }
+
+        private void bt_Them_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

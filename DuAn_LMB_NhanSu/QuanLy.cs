@@ -30,5 +30,12 @@ namespace DuAn_LMB_NhanSu
         {
             Application.Exit();
         }
+
+        private void btNhanVien_Click(object sender, EventArgs e)
+        {
+            US_Control.CT_NhanVien nv = new US_Control.CT_NhanVien();
+            pnLoad.Controls.Clear();
+            pnLoad.Controls.Add(nv);
+        }
     }
 }

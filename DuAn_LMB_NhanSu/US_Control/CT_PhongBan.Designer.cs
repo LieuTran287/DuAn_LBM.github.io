@@ -30,13 +30,13 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Luoi_PhongBan = new System.Windows.Forms.DataGridView();
             this.MaPhongBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenPhongBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bt_Them = new System.Windows.Forms.Button();
             this.txtSoLNhanVien = new System.Windows.Forms.TextBox();
             this.txtTenPhongBan = new System.Windows.Forms.TextBox();
             this.txtMaPhongBan = new System.Windows.Forms.TextBox();
@@ -46,14 +46,14 @@
             this.lbmachinhanh = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Luoi_PhongBan)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(352, -4);
+            this.label1.Location = new System.Drawing.Point(315, -4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(157, 33);
             this.label1.TabIndex = 0;
@@ -61,10 +61,10 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.Luoi_PhongBan);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.bt_Them);
             this.panel1.Controls.Add(this.txtSoLNhanVien);
             this.panel1.Controls.Add(this.txtTenPhongBan);
             this.panel1.Controls.Add(this.txtMaPhongBan);
@@ -80,18 +80,19 @@
             this.panel1.Size = new System.Drawing.Size(772, 449);
             this.panel1.TabIndex = 1;
             // 
-            // dataGridView1
+            // Luoi_PhongBan
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Luoi_PhongBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Luoi_PhongBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Luoi_PhongBan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaPhongBan,
             this.TenPhongBan,
             this.SoNhanVien});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 285);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(772, 164);
-            this.dataGridView1.TabIndex = 12;
+            this.Luoi_PhongBan.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Luoi_PhongBan.Location = new System.Drawing.Point(0, 285);
+            this.Luoi_PhongBan.Name = "Luoi_PhongBan";
+            this.Luoi_PhongBan.Size = new System.Drawing.Size(772, 164);
+            this.Luoi_PhongBan.TabIndex = 12;
             // 
             // MaPhongBan
             // 
@@ -126,14 +127,15 @@
             this.button2.Text = "Cập Nhật";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // bt_Them
             // 
-            this.button1.Location = new System.Drawing.Point(32, 234);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bt_Them.Location = new System.Drawing.Point(32, 234);
+            this.bt_Them.Name = "bt_Them";
+            this.bt_Them.Size = new System.Drawing.Size(75, 23);
+            this.bt_Them.TabIndex = 9;
+            this.bt_Them.Text = "Thêm";
+            this.bt_Them.UseVisualStyleBackColor = true;
+            this.bt_Them.Click += new System.EventHandler(this.bt_Them_Click);
             // 
             // txtSoLNhanVien
             // 
@@ -216,7 +218,7 @@
             this.Load += new System.EventHandler(this.CT_PhongBan_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Luoi_PhongBan)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -229,14 +231,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bt_Them;
         private System.Windows.Forms.TextBox txtSoLNhanVien;
         private System.Windows.Forms.TextBox txtTenPhongBan;
         private System.Windows.Forms.TextBox txtMaPhongBan;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Luoi_PhongBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPhongBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenPhongBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoNhanVien;
