@@ -12,12 +12,12 @@ namespace DuAn_LMB_NhanSu
     class Dataprovider
     {
         public static SqlConnection conn = null;
-        public static DataTable dt = new DataTable();
+        public static DataTable dt;
         public static SqlConnection ketnoidulieu()
         {
             try
             {
-                
+
                 string[] kq;
                 FileStream fs = new FileStream(@"ketnoi.ini", FileMode.Open);
                 StreamReader rd = new StreamReader(fs, Encoding.UTF8);
@@ -36,8 +36,7 @@ namespace DuAn_LMB_NhanSu
         }
 
         #region
-        ///Thực thi câu truy vấn
-        ///
+        ///Đăng nhập
         public static DataTable dangnhap(string tk, string mk)
         {
             conn = ketnoidulieu();
@@ -53,7 +52,52 @@ namespace DuAn_LMB_NhanSu
             da.Fill(dt);
             return dt;
         }
-        #endregion
 
+        ///Hiện chi nhánh
+        ///
+        public static DataTable HienThiChiNhanh(string machinhanh)
+        {
+            if (conn.State == ConnectionState.Open)
+                conn.Close();
+            conn.Open();
+            SqlCommand cm = new SqlCommand("HienChiNhanh", conn);
+            cm.CommandType = CommandType.StoredProcedure;
+            cm.Parameters.AddWithValue("@machinhanh", machinhanh);
+            SqlDataAdapter da = new SqlDataAdapter(cm);
+            da.Fill(dt);
+            return dt;
+        }
+        #endregion
+        public static DataTable getDatatTable(string sql)
+        {
+            //dt.Clear();
+            dt = new DataTable();
+            conn = ketnoidulieu();
+            if (conn.State == ConnectionState.Open)
+                conn.Close();
+            conn.Open();
+            SqlCommand cm = new SqlCommand(sql, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cm);
+            da.Fill(dt);
+            return dt;
+        }
+
+        public SqlDataReader ThemChiNhanh(string machinhanh, string tenchinhanh, string cap, string diachi, string sdt, string nhomme)
+        {
+            if (conn.State == ConnectionState.Open)
+                conn.Close();
+            conn.Open();
+            SqlDataReader dr = null;
+            SqlCommand cm = new SqlCommand("ThemChiNhanh", conn);
+            cm.CommandType = CommandType.StoredProcedure;
+            cm.Parameters.AddWithValue("@machinhanh", machinhanh);
+            cm.Parameters.AddWithValue("@tenchinhanh", tenchinhanh);
+            cm.Parameters.AddWithValue("@cap", cap);
+            cm.Parameters.AddWithValue("@diachi", diachi);
+            cm.Parameters.AddWithValue("@sdt", sdt);
+            cm.Parameters.AddWithValue("@nhomme", nhomme);
+            dr = cm.ExecuteReader();
+            return dr;
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace DuAn_LMB_NhanSu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QuanLy());
+            Application.Run(new Form1());
         }
     }
 }
